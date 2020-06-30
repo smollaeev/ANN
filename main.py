@@ -10,12 +10,11 @@ def main ():
     array = dataset.iloc [:, 0:6].values
     X = IndependentVariables (array)
     Y = dataset.iloc [:, 6].values
-
-    # numberOfHiddenLayers = 
-    # numberOfNeurons = 
-    # numberOfInputs = 14
-    solution = Solution (X, Y)
-    solution.classify ()
     
+    solution = Solution (X, Y)
+    solution.preprocess_Data ()
+    solution.ANN ()
+    print (solution.accuracy)
+
 if __name__ == "__main__":
     main ()
